@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl4nxfala4iic"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xslx3"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j251o"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[node name="interactable" type="RigidBody3D" groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_xslx3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_j251o")
